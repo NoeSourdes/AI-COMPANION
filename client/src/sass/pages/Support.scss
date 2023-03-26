@@ -1,0 +1,13 @@
+.page-support {
+    animation: 2s scale;
+    padding: 10vh 150px 0px;
+    height: 100vh;
+}
+@keyframes scale {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,27 @@
+@font-face {
+    font-family: cofo-sans;
+    src: url('../fonts/CoFoSans-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: black;
+}
+
+body {
+    background: #fff;
+    font-family: cofo-sans, sans-serif;
+    animation: 2s scale;
+}
+
+@keyframes scale {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

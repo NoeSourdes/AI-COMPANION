@@ -1,0 +1,54 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  .titel {
+    margin-top: -10px;
+    cursor: pointer;
+    .anim {
+      padding: 10px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      transition: all 0.3s;
+      img {
+        height: 30px;
+        animation: 1s rotate;
+      }
+      span {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .nav {
+    ul {
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      gap: 50px;
+      li {
+        font-size: 18px;
+        border-radius: 10px;
+        margin-top: -10px;
+        padding: 10px 15px;
+        transition: 0.3s all;
+      }
+      li:hover {
+        background-color: #f3f3f3;
+      }
+    }
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
