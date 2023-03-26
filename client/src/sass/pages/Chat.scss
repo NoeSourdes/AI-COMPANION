@@ -1,8 +1,148 @@
+@font-face {
+  font-family: cofo-sans-bold;
+  src: url("../../fonts/CoFoSans-Bold.ttf");
+}
+
+.Chat {
+  animation: 2s scale;
+  padding: 10vh 150px 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    position: absolute;
+    cursor: pointer;
+    top: 50px;
+    left: 50px;
+    a {
+      img {
+        animation: 1s rotate;
+        height: 35px;
+      }
+    }
+  }
+  .titel {
+    p {
+      font-size: 30px;
+      margin-bottom: 20px;
+      font-family: cofo-sans-bold;
+    }
+  }
+  .section-dialogue {
+    height: 90vh;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    p {
+      padding: 10px;
+      box-shadow: 7px 7px 11px #e3e3e3, -3px -3px 11px #e3e3e3;
+      height: auto;
+      border-radius: 20px;
+      max-width: 700px;
+      width: fit-content;
+      font-weight: bold;
+      &:nth-child(even) {
+        margin: 10px 0px 10px;
+      }
+      &:nth-child(odd) {
+        margin-left: auto;
+        background: #d9376e;
+        color: #fff;
+      }
+    }
+    .sentance {
+      padding: 10px;
+      box-shadow: 7px 7px 11px #e3e3e3, -3px -3px 11px #e3e3e3;
+      border-radius: 20px;
+      max-width: 700px;
+      width: fit-content;
+      font-weight: bold;
+    }
+  }
+  .section-input {
+    width: 1200px;
+    bottom: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    .clear {
+      cursor: pointer;
+      margin-right: 20px;
+      background: #d9376e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      width: 150px;
+      height: 50px;
+      padding: 10px;
+      color: #fff;
+      font-size: 15px;
+      border-radius: 50px;
+      outline: none;
+      transition: 0.3s;
+      img {
+        margin-right: 10px;
+      }
+    }
+    .clear:hover {
+      background: #b42d5a;
+    }
+    form {
+      height: 50px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 7px 7px 11px #e3e3e3, -3px -3px 11px #e3e3e3;
+      display: flex;
+      textarea {
+        width: 1000px;
+        resize: none;
+        height: auto;
+        min-height: 50px;
+        outline: none;
+        padding: 15px;
+        font-size: 16px;
+        max-height: 330px;
+        border: none;
+        background: transparent;
+      }
+      textarea::placeholder {
+        color: #b3b3b3;
+      }
+      textarea::-webkit-scrollbar {
+        width: 0px;
+      }
+      .submit {
+        padding-right: 20px;
+        outline: none;
+        border: none;
+        background: transparent;
+        ion-icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
 @keyframes scale {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -1,3 +1,52 @@
+@font-face {
+    font-family: cofo-sans-bold;
+    src: url("../../fonts/CoFoSans-Bold.ttf");
+  }
+.page-error {
+    animation: 2s scale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p:nth-child(1){
+            font-size: 100px;
+            font-family: cofo-sans-bold;
+            span:nth-child(odd){
+                color: #e5e5ea;
+            }
+        }
+        p:nth-child(2){
+            font-size: 50px;
+            font-family: cofo-sans-bold;
+        }
+        p:nth-child(3){
+            font-size: 30px;
+        }
+        a {
+            button {
+                margin: 20px;
+                font-size: 20px;
+                font-family: cofo-sans-bold;
+                cursor: pointer;
+                background: #FF8E3C;
+                transition: 0.3s all;
+                padding: 30px;
+                outline: none;
+                border: none;
+                border-radius: 30px;
+            }
+            button:hover {
+                background: #e07b32;
+              }
+        }
+    }
+}
+
 @keyframes scale {
     0% {
         opacity: 0;

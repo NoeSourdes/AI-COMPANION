@@ -5,20 +5,22 @@
     margin-top: -10px;
     cursor: pointer;
     .anim {
-      padding: 10px;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      transition: all 0.3s;
-      img {
-        height: 30px;
-        animation: 1s rotate;
-      }
-      span {
-        font-size: 20px;
-        letter-spacing: 2px;
+      a {
+        padding: 10px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        transition: all 0.3s;
+        img {
+          height: 30px;
+          animation: 1s rotate;
+        }
+        span {
+          font-size: 20px;
+          letter-spacing: 2px;
+        }
       }
     }
   }
@@ -36,7 +38,7 @@
         transition: 0.3s all;
       }
       li:hover {
-        background-color: #f3f3f3;
+        background-color: #e5e5ea;
       }
     }
   }

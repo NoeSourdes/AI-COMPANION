@@ -1,13 +1,59 @@
+@font-face {
+  font-family: cofo-sans-bold;
+  src: url("../../fonts/CoFoSans-Bold.ttf");
+}
 .page-support {
-    animation: 2s scale;
-    padding: 10vh 150px 0px;
-    height: 100vh;
+  animation: 2s scale;
+  padding: 10vh 150px 0px;
+  max-width: 1700px;
+  height: 100vh;
+  .section {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: auto;
+    max-width: 1700px;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      width: 55%;
+      .titel {
+        font-family: cofo-sans-bold;
+        font-size: 60px;
+        margin-bottom: 20px;
+      }
+      .para {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+    .right {
+      width: 45%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      img {
+        height: 400px;
+        border-radius: 50px;
+      }
+    }
+  }
+  .sentance-copy {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    letter-spacing: 2px;
+      font-weight: bold;
+  }
 }
 @keyframes scale {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

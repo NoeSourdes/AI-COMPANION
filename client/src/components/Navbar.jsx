@@ -8,8 +8,8 @@ const Navbar = () => {
     <div className="Navbar">
       <div className="titel">
         <div className="anim">
-          <img src={logo_app} alt="logo application" />
           <NavLink to="/">
+            <img src={logo_app} alt="logo application" />
             <span>AI-COMPANION</span>
           </NavLink>
         </div>
