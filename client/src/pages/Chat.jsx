@@ -14,10 +14,10 @@ const Chat = () => {
 
     const interval = setInterval(() => {
       // Update the text content of the loading indicator
-      element.textContent += ".";
+      element.textContent += "";
 
       // If the loading indicator has reached three dots, reset it
-      if (element.textContent === "....") {
+      if (element.textContext === "...") {
         element.textContent = "";
       }
     }, 300);
@@ -49,7 +49,7 @@ const Chat = () => {
     return `id-${timestamp}-${hexadecimalString}`;
   };
 
-  const chatStripe = ( value, uniqueId) => {
+  const chatStripe = (value, uniqueId) => {
     return `<p class='message' id=${uniqueId}>${value}</p>`;
   };
 
@@ -76,12 +76,36 @@ const Chat = () => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv);
+
+    const message = await fetch("http://localhost:5000", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt: data.get("prompt"),
+      }),
+    });
+
+    clearInterval(loadInterval);
+    messageDiv.innerHTML = "";
+
+    if (message.ok) {
+      const data = await message.json();
+      const parsedData = data.bot.trim(); // trims any trailing spaces/'\n'
+
+      typeText(messageDiv, parsedData);
+    } else {
+      const err = await message.text();
+
+      messageDiv.innerHTML = "Something went wrong";
+      alert(err);
+    }
   };
 
   const handleKeyUp = (e) => {
     if (e.keyCode === 13) {
       handleSubmit(e);
-      console.log(formRef.current);
     }
   };
 
@@ -96,7 +120,9 @@ const Chat = () => {
         <p>AI-COMPANION</p>
       </div>
       <section className="section-dialogue">
-        <span className="sentance">Hi, I'm AI-Compagnion. Ask me a question.</span>
+        <span className="sentance">
+          Hi, I'm AI-Compagnion. Ask me a question.
+        </span>
         <div id="chat_container" ref={chatContainerRef}></div>
       </section>
       <div className="section-input">
