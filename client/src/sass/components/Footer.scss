@@ -50,7 +50,7 @@
     .reseaux {
       a {
         img {
-          margin-right: 15px;
+          margin: 0 10px;
           height: 35px;
         }
       }
@@ -58,6 +58,38 @@
     .copyright {
       letter-spacing: 2px;
       font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width:800px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .up {
+      padding: 15px 30px;
+      .logo {
+        display: none;
+      }
+    }
+    .down {
+      padding: 0;
+      .copyright {
+        position: absolute;
+        font-size: 12px !important;
+        bottom: 5px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .reseaux {
+        a {
+          img {
+            height: 27px !important;
+          }
+        }
+      }
     }
   }
 }

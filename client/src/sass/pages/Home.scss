@@ -1,24 +1,27 @@
 @font-face {
-    font-family: cofo-sans-bold;
-    src: url("../../fonts/CoFoSans-Bold.ttf");
-  }
+  font-family: cofo-sans-bold;
+  src: url("../../fonts/CoFoSans-Bold.ttf");
+}
 .Home {
-    animation: 2s scale;
-    padding: 10vh 150px 10vh;
+  animation: 2s scale;
+  padding: 10vh 150px 10vh;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  min-width: auto;
+  max-width: 1700px;
+  overflow: hidden;
   .section_1 {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    min-width: auto;
-    max-width: 1700px;
-    height: 100vh;
     .insight {
       height: 86vh;
       section {
-        margin-top: 50px;
         width: 100%;
+        position: relative;
+        top: 45%;
+        transform: translate(0%, -50%);
         display: flex;
         align-items: center;
+        justify-content: space-between;
         .left {
           width: 55%;
           display: flex;
@@ -45,7 +48,7 @@
           }
         }
         .right {
-          width: 45%;
+          width: 400px;
           display: flex;
           justify-content: flex-end;
           align-items: center;
@@ -86,18 +89,18 @@
     transform: translate(-50%);
     min-width: auto;
     max-width: 1700px;
-    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     .insight {
-      height: 86vh;
+      height: 70vh;
       section {
         width: 100%;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         .right {
-          width: 55%;
+          width: 45%;
           display: flex;
           flex-direction: column;
           p {
@@ -121,7 +124,7 @@
           }
         }
         .left {
-          width: 45%;
+          width: 400px;
           display: flex;
           justify-content: flex-start;
           align-items: center;
@@ -159,10 +162,136 @@
 }
 
 @keyframes scale {
-    0% {
-        opacity: 0;
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Home {
+    padding: 7vh 100px;
+  }
+  .section_1 {
+    .left {
+      p {
+        font-size: 45px !important;
+      }
     }
-    100% {
-        opacity: 1;
+    .right {
+      .dialog-block {
+        width: 350px !important;
+        p {
+          max-width: 200px !important;
+          font-size: 13px !important;
+        }
+      }
     }
+  }
+  .section_2 {
+    .right {
+      padding-left: 30px;
+      p {
+        font-size: 45px !important;
+      }
+    }
+    .left {
+      .dialog-block {
+        width: 350px !important;
+        p {
+          max-width: 200px !important;
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section_1 {
+    .insight {
+      section {
+        flex-direction: column-reverse;
+        .left {
+          margin-top: 30px;
+          text-align: center;
+          align-items: center !important;
+          p {
+            font-size: 40px !important;
+          }
+        }
+        .right {
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 100px;
+        }
+      }
+    }
+  }
+  .section_2 {
+    .insight {
+      section {
+        flex-direction: column;
+        .right {
+          text-align: center;
+          padding-left: 0px;
+          margin-top: 30px;
+          p {
+            font-size: 40px !important;
+          }
+        }
+        .left {
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 100px;
+        }
+      }
+    }
+  }
+  .section_3 {
+    margin-top: 350px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .Home {
+    padding: 30px 30px;
+  }
+  .section_1 {
+    .insight {
+      section {
+        .left {
+          width: 300px !important;
+          p {
+            font-size: 30px !important;
+          }
+        }
+        .right {
+          width: 300px !important;
+          p {
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+  }
+  .section_2 {
+    .insight {
+      section {
+        .right {
+          width: 300px !important;
+          p {
+            font-size: 30px !important;
+          }
+        }
+        .left {
+          width: 300px !important;
+          p {
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+  }
 }

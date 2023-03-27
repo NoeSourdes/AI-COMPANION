@@ -70,7 +70,7 @@ const Home = () => {
             </div>
             <div className="right">
               <p>
-                Get quick and accurate answers to all your questions with our AI
+                Get quick and accurate answers to all your questions with our AI.
               </p>
               <NavLink to="chat">
                 <button>Try AI</button>

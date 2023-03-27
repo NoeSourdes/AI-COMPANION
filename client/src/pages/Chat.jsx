@@ -1,10 +1,26 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import logo_new_message from "../assets/logo-new-message.png";
 import "../sass/pages/Chat.scss";
 import logo_app from "../assets/logo-app.png";
 import { NavLink } from "react-router-dom";
 
 const Chat = () => {
+  const [text, setText] = useState('')
+
+  useEffect(() => {
+    const sentence = "Hi, I'm AI-Companion!! Ask me a question.."
+    let i = 0
+    const interval = setInterval(() => {
+      setText(sentence.substring(0, i));
+      i++
+      if( i>= sentence.length){
+        clearInterval(interval)
+      }
+    }, 50)
+  }, [])
+
+
+  
   const formRef = useRef(null);
   const chatContainerRef = useRef(null);
   const [loadInterval, setLoadInterval] = useState(null);
@@ -108,7 +124,9 @@ const Chat = () => {
       handleSubmit(e);
     }
   };
-
+  const clearChat = () => {
+    chatContainerRef.current.innerHTML = ""
+  }
   return (
     <div className="Chat">
       <div className="logo">
@@ -121,12 +139,12 @@ const Chat = () => {
       </div>
       <section className="section-dialogue">
         <span className="sentance">
-          Hi, I'm AI-Compagnion. Ask me a question.
+          {text}
         </span>
         <div id="chat_container" ref={chatContainerRef}></div>
       </section>
       <div className="section-input">
-        <button className="clear">
+        <button className="clear" onClick={clearChat}>
           <img src={logo_new_message} alt="log new message" /> New Chat
         </button>
         <form ref={formRef} onSubmit={handleSubmit}>

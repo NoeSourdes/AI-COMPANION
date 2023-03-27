@@ -4,9 +4,14 @@
   }
 
 .page-creator {
+    overflow: hidden;
     animation: 2s scale;
     padding: 10vh 150px 10vh;
     height: 100vh;
+    max-width: 1700px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
     .section {
         height: 100%;
         display: flex;
@@ -33,3 +38,17 @@
         opacity: 1;
     }
 }
+ @media screen and (max-width: 1000px) {
+    .page-creator {
+        padding: 30px;
+        .section {
+            text-align: center;
+            justify-content: space-around;
+            .me {
+                .titel {
+                    font-size: 40px !important;
+                }
+            }
+        }
+    }
+ }

@@ -9,8 +9,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  overflow: hidden;
   .logo {
     position: absolute;
     cursor: pointer;
@@ -24,6 +24,10 @@
     }
   }
   .titel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
     p {
       font-size: 30px;
       margin-bottom: 20px;
@@ -31,10 +35,12 @@
     }
   }
   .section-dialogue {
-    height: 90vh;
+    padding: 15px 15px 100px;
+    height: 75vh;
     width: 1200px;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     p {
       padding: 10px;
       box-shadow: 7px 7px 11px #e3e3e3, -3px -3px 11px #e3e3e3;
@@ -59,15 +65,20 @@
       max-width: 700px;
       width: fit-content;
       font-weight: bold;
+      margin-bottom: 10px;
     }
+  }
+  .section-dialogue::-webkit-scrollbar{
+    display: none;
   }
   .section-input {
     width: 1200px;
-    bottom: 20px;
     position: absolute;
     display: flex;
     justify-content: space-between;
+    position: relative;
     .clear {
+      z-index: 2;
       cursor: pointer;
       margin-right: 20px;
       background: #d9376e;
@@ -84,6 +95,7 @@
       outline: none;
       transition: 0.3s;
       img {
+        z-index: 2;
         margin-right: 10px;
       }
     }
@@ -91,6 +103,7 @@
       background: #b42d5a;
     }
     form {
+      z-index: 2;
       height: 50px;
       background: #fff;
       border-radius: 10px;
@@ -120,10 +133,21 @@
         border: none;
         background: transparent;
         ion-icon {
+          cursor: pointer;
           font-size: 20px;
         }
       }
     }
+  }
+  .section-input::before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -50px;
+    z-index: 1;
+    height: 50px;
+    width: 1300px;
+    box-shadow: 0px -50px 50px #fff;
   }
 }
 
@@ -144,5 +168,66 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .logo {
+    top: 30px !important;
+    left: 30px !important;
+  }
+  .titel {
+    p {
+      font-size: 20px !important;
+    }
+  }
+  .section-dialogue {
+    padding: 30px !important;
+    width: 700px !important;
+  }
+  .section-input {
+    justify-content: center !important;
+    form {
+      textarea {
+        width: 600px !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .section-dialogue {
+    width: 500px !important;
+  }
+  .section-input {
+    justify-content: center !important;
+    form {
+      textarea {
+        width: 400px !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  .section-dialogue {
+    width: 400px !important;
+    p {
+      max-width: 300px !important;
+    }
+  }
+  .section-input {
+    justify-content: center !important;
+    .clear {
+      overflow: hidden;
+      width: 50px !important;
+      img {
+        margin-left: 45px !important;
+        margin-right: 12.3px !important;
+      }
+    }
+    form {
+      textarea {
+        width: 250px !important;
+      }
+    }
   }
 }
