@@ -23,23 +23,22 @@ const Chat = () => {
   
   const formRef = useRef(null);
   const chatContainerRef = useRef(null);
-  const [loadInterval, setLoadInterval] = useState(null);
 
-  const loader = (element) => {
-    element.textContent = "";
 
-    const interval = setInterval(() => {
+  let loadInterval
+  function loader(element) {
+    element.textContent = ''
+
+    loadInterval = setInterval(() => {
       // Update the text content of the loading indicator
-      element.textContent += "";
+      element.textContent += '.';
 
       // If the loading indicator has reached three dots, reset it
-      if (element.textContext === "...") {
-        element.textContent = "";
+      if (element.textContent === '....') {
+        element.textContent = '';
       }
     }, 300);
-
-    setLoadInterval(interval);
-  };
+  }
 
   const typeText = (element, text) => {
     let index = 0;
