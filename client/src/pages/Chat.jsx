@@ -94,7 +94,7 @@ const Chat = () => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv);
 
-    const message = await fetch("https://ai-companion-5w44.onrender.com", {
+    const message = await fetch("https://ai-companion-l7b6.onrender.com", {
       method: "POST",
       headers: {
         "content-type": "application/json",
