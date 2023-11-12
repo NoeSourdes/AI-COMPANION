@@ -1,0 +1,125 @@
+@media screen and (max-width: 1200px) {
+  .Home {
+    padding: 7vh 100px;
+  }
+  .section_1 {
+    .left {
+      p {
+        font-size: 45px !important;
+      }
+    }
+    .right {
+      .dialog-block {
+        width: 350px !important;
+        p {
+          max-width: 200px !important;
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
+  .section_2 {
+    .right {
+      padding-left: 30px;
+      p {
+        font-size: 45px !important;
+      }
+    }
+    .left {
+      .dialog-block {
+        width: 350px !important;
+        p {
+          max-width: 200px !important;
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section_1 {
+    .insight {
+      section {
+        flex-direction: column-reverse;
+        .left {
+          margin-top: 30px;
+          text-align: center;
+          align-items: center !important;
+          p {
+            font-size: 40px !important;
+          }
+        }
+        .right {
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 100px;
+        }
+      }
+    }
+  }
+  .section_2 {
+    .insight {
+      section {
+        flex-direction: column;
+        .right {
+          text-align: center;
+          padding-left: 0px;
+          margin-top: 30px;
+          p {
+            font-size: 40px !important;
+          }
+        }
+        .left {
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 100px;
+        }
+      }
+    }
+  }
+  .section_3 {
+    margin-top: 350px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .Home {
+    padding: 30px 30px;
+  }
+  .section_1 {
+    .insight {
+      section {
+        .left {
+          width: 300px !important;
+          p {
+            font-size: 30px !important;
+          }
+        }
+        .right {
+          width: 300px !important;
+          p {
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+  }
+  .section_2 {
+    .insight {
+      section {
+        .right {
+          width: 300px !important;
+          p {
+            font-size: 30px !important;
+          }
+        }
+        .left {
+          width: 300px !important;
+          p {
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+  }
+}
